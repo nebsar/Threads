@@ -12,14 +12,27 @@
  */
 
 #include <cstdlib>
+#include <thread>
+#include <iostream>
 
 using namespace std;
 
 /*
  * 
  */
+
+void funciton_1(){
+    cout<<"Hello World!"<<endl;
+}
+
 int main(int argc, char** argv) {
 
+    thread t1(funciton_1);
+    
+    t1.join();
+    
+    
+    
     return 0;
 }
 
