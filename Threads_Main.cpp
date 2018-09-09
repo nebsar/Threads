@@ -21,18 +21,26 @@ using namespace std;
  * 
  */
 
-void funciton_1(){
-    cout<<"Hello World!"<<endl;
+void funciton_1() {
+    cout << "Hello World!" << endl;
 }
 
 int main(int argc, char** argv) {
 
     thread t1(funciton_1);
-    
+
     t1.join();
+
+    t1.detach(); /** you detach the child thread from the main thread. 
+                 *So child thread cannot join again and main thread does not wait for child thread to finish.
+                 * Because of this, you cannot see "Hello World" if you detach the child thread.
+                 **/
     
     
-    
+
+
+
+
     return 0;
 }
 
